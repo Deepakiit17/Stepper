@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
+          <PaymentForm />
           <Paytm />
         </p>
         

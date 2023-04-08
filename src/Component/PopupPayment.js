@@ -13,7 +13,7 @@ function PopupPayment({ orderId, txnToken, popup }) {
             "amount": 536 /* update amount */
         },
         merchant: {
-            mid: "enter youe mid",
+            mid: "enter mid here",
             name: "ILEARNPLACE",
             logo: "",
             redirect: true

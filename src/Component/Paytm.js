@@ -10,7 +10,7 @@ function Paytm({ team_id, totalAmount, handleNext }) {
     const [popup, setPopup] = useState(false);
     const initiatePayment = () => {
         // TOAST_LOADING('Please wait...')
-        getPaymentToken({ team_id: 62, amount: 1 })
+        getPaymentToken({ team_id: 62, amount: 129 })
             .then((response) => {
                 if (response.status === 200) {console.log(" response.data",  response.data)
                     const { orderId, txnToken } = response.data;

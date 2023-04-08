@@ -4,9 +4,10 @@ import Grid from "@mui/material/Grid";
 import { useEffect } from "react";
 import Paytm from "./Paytm";
 
-export default function PaymentForm({ paymentData }) {
-  const { teamSize } = paymentData;
-  const teameMambers = teamSize;
+export default function PaymentForm({ paymentData, team_id, amount }) {
+  // const { teamSize } = paymentData;
+  // const teameMambers = teamSize;
+  const teameMambers = 1;
   const deliveryCharge = 129;
   const registrationFee = 0;
   const TotalRegitrationFee = registrationFee * teameMambers;
@@ -14,7 +15,7 @@ export default function PaymentForm({ paymentData }) {
     teameMambers * deliveryCharge + registrationFee * teameMambers;
 
   useEffect(() => {
-    paymentData.setTotleAmount(totalAmount);
+    // paymentData.setTotleAmount(totalAmount);
   }, [totalAmount, paymentData]);
 
   return (
@@ -57,7 +58,9 @@ export default function PaymentForm({ paymentData }) {
           <Typography variant="body">
             Total Amount : <b>{totalAmount}</b>
           </Typography>
-          <Paytm />
+          <br />
+          <br />
+          {/* <Paytm  amount={totalAmount}/> */}
         </Grid>
       </Grid>
     </React.Fragment>
