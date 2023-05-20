@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography,  } from '@mui/material';
+import { Typography } from '@mui/material';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
@@ -8,6 +8,7 @@ const useStyles = makeStyles(() => ({
     whiteSpace: 'nowrap',
     width: '100%',
     animation: '$ticker 21s linear infinite',
+    fontSize: '20px', // Increase the font size
   },
   '@keyframes ticker': {
     '0%': { transform: 'translateX(100%)' },
@@ -67,6 +68,15 @@ const News = () => {
     };
   }, [newsData.length]);
 
+  const getRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
+
   return (
     <div className={classes.newsTicker}>
       {newsData.map((newsItem, index) => (
@@ -75,8 +85,7 @@ const News = () => {
           className={classes.newsItem}
           style={{
             display: index === currentIndex ? 'inline-block' : 'none',
-            backgroundColor: `rgb(${Math.random() * 255}, ${Math.random() *
-              255}, ${Math.random() * 255})`, // Generate a random background color
+            backgroundColor: getRandomColor(),
           }}
         >
           <Typography variant="subtitle1">{newsItem.title}</Typography>
